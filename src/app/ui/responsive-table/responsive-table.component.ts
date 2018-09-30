@@ -13,7 +13,7 @@ export class ResponsiveTableComponent implements OnInit {
   title: String = 'All Users'
   data: Data;
   users: User[];
-  count: Number;
+  count: Number = 0;
   showSpinner: Boolean = true;
   query: String = '';
 
