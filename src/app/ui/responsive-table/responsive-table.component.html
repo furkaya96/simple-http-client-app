@@ -1,0 +1,26 @@
+<div class="container">
+  <h2> {{ title }} </h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1"> First Name </div>
+      <div class="col col-2"> Last Name </div>
+      <div class="col col-3"> E-mail </div>
+      <div class="col col-4"> Gender </div>
+    </li>
+    <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+    <li class="table-row" *ngFor="let user of users">
+      <div class="col col-1" data-label="First Name"> {{ user.personal.firstName }} </div>
+      <div class="col col-2" data-label="Last Name"> {{ user.personal.lastName }} </div>
+      <div class="col col-3" data-label="E-mail"> {{ user.account.email }} </div>
+      <div class="col col-4" data-label="Gender"> {{ user.personal.gender }} </div>
+    </li>
+
+    <p *ngIf="!showSpinner"><small> Showing {{ count }} users. </small></p>
+
+    <button (click)="getMaleUsers()">Get Male Users</button>
+    <button (click)="getFemaleUsers()">Get Female Users</button>
+    <button (click)="getAllUsers()">Get All Users</button>
+
+  </ul>
+
+</div>
